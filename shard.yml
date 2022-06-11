@@ -1,0 +1,6 @@
+name: json-merge-patch
+version: 0.1.0
+crystal: ">= 1.0.0"
+license: MIT
+authors:
+  - Caspian Baska <caspianbaska@gmail.com>
