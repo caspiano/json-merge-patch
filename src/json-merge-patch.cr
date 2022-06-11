@@ -17,10 +17,10 @@ module JSON
           if right_value.nil? || right_value.raw.nil?
             left_hash.delete(right_key)
           else
-            original_value = left_hash[right_key]
-            left_hash[right_key] = merge(original_value, right_value)
+            left_hash[right_key] = left_hash[right_key]?.try { |left_value| merge(left_value, right_value) } || right_value
           end
         end
+
         JSON::Any.new(left_hash)
       else
         right.dup
